@@ -3,15 +3,15 @@
 # Have any problems? Make an issue at this project's GitHub page: https://github.com/csutedja/WA-GPA-Calculator
 
 from statistics import mean # used to calculate the average GPA
-def invalid_input():
-  print("\nInvalid input! This program will now exit.\nThank you for using this program.\nIf you have any problems, please create an issue at this project's GitHub page: https://github.com/csutedja/WA-GPA-Calculator")
-  raise SystemExit
+def invalid_input(): # function that is called to output a message everytime an invalid input is inputted
+  print("\nInvalid input!\n")
+  repeat()
   
-def goodbye_message():
+def goodbye_message(): # function that is called when
   print("\nThis program will now exit.\nThank you for using this program.\nIf you have any problems, please create an issue at this project's GitHub page: https://github.com/csutedja/WA-GPA-Calculator")
   raise SystemExit
   
-def weighted_main():
+def weighted_main(): # all calculations/output related to weighted GPA is done in this function
   cp_count = 0
   ap_count = 0 #defining class counts
   honors_count = 0
@@ -19,7 +19,6 @@ def weighted_main():
   def error_check():
     if int(cp_count) < 0 or int(honors_count) < 0 or int(ap_count) < 0:
       invalid_input()
-      
   print('\n')  
   
   cp_count = str(input("How many CP classses do you take at WA? If you take none, just enter '0'. "))
@@ -76,13 +75,12 @@ def weighted_main():
       grade_input = int(input("Please input an AP course grade from 0 to 100 "))
       base_gpa_calc(1)
     except ValueError:
-      invalid_input()
-      
+      invalid_input()   
   average_gpa = mean(gpa)
   print("Your weighted GPA is", str(round(average_gpa, 3)) + '.')
   repeat()
   
-def unweighted_main():
+def unweighted_main(): # all calculations/output related to unweighted GPA is done in this function
   count = 0
 
   def error_check():
@@ -122,12 +120,11 @@ def unweighted_main():
     except ValueError:
       invalid_input()
       raise SystemExit
-      
   average_gpa = mean(gpa)
   print("Your unweighted GPA is", str(round(average_gpa, 3)) + '.')
   repeat()
   
-def prompt():
+def prompt(): # prompt that is used when program starts up
   question = str(input("Westford Academy GPA Calculator\nWelcome! What would you like to do?\n\n1) Weighted GPA Calculation\n2) Unweighted GPA Calculation\n3) Exit this program\n\n"))
   try:
     if question == str(1):
@@ -143,7 +140,7 @@ def prompt():
     print("\nInvalid input!\n")
     prompt()
     
-def repeat():
+def repeat(): # the repeat user prompt
   try:
     question = str(input("Would you like to repeat this program?\n1) If so, please enter '1' or 'y'.\n2) If not, please enter '2' or 'n'.\n"))
     if question == str(1) or question == str('y'):
