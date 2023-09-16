@@ -8,3 +8,7 @@ _Easy to use Python program used for calculating a student's unweighted/weighted
 3. Enter in your grades for each kind of course (CP/Honors/AP).
 4. The program will output your GPA!
 5. If you would like to repeat the program/end it, follow the on-screen instructions.
+
+# To-do:
+- save GPAs to a history file
+- code cleanup
